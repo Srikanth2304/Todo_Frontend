@@ -2,7 +2,7 @@ const TaskItem = ({task , handleToggleTask , handleDeleteTask}) => {
     return (
         <>
             <li
-                key={task.id}
+                
                 class="list-group-item d-flex justify-content-between align-items-center"
             >
                 <span

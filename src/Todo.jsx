@@ -4,7 +4,9 @@ import './Todo.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import TaskInput from './TaskInput';
-import TaskItem from './TaskItem';
+import TaskList from './TaskList';
+
+
 
 function Todo() {
     const [tasks, setTasks] = useState([]);
@@ -53,14 +55,8 @@ function Todo() {
     return (
         <div className="container">
             <h1>Todo Application</h1>
-            <TaskInput handleAddTask={handleAddTask} setTaskname={setTaskname} taskname={taskname}/>
-            <div>
-                <ul className='list-group'>
-                    {tasks.map((task) => (
-                        <TaskItem task={task} handleToggleTask={handleToggleTask} handleDeleteTask={handleDeleteTask}/>
-                    ))}
-                </ul>
-            </div>
+            <TaskInput  handleAddTask={handleAddTask} setTaskname={setTaskname} taskname={taskname}/>
+            <TaskList tasks={tasks} handleToggleTask={handleToggleTask} handleDeleteTask={handleDeleteTask}/>
         </div>
     );
 }
