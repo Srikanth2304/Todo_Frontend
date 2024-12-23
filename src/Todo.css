@@ -1,0 +1,17 @@
+.form-control{
+    max-width: 800px;
+}
+
+.form-group{
+    display: flex;
+    padding-left: 60px;
+    padding-top: 20px;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.text-button{
+    display: flex;
+    gap: 10px;
+}
+
