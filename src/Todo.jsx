@@ -4,6 +4,7 @@ import './Todo.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import TaskInput from './TaskInput';
+import TaskItem from './TaskItem';
 
 function Todo() {
     const [tasks, setTasks] = useState([]);
@@ -56,26 +57,7 @@ function Todo() {
             <div>
                 <ul className='list-group'>
                     {tasks.map((task) => (
-                        <li
-                            key={task.id}
-                            class="list-group-item d-flex justify-content-between align-items-center"
-                        >
-                            <span
-                                style={{
-                                    textDecoration: task.completed ? "line-through" : "none",
-                                }}
-                            >
-                                {task.title}
-                            </span>
-                            <div className='text-button '>
-                                <button type="button" class="btn btn-outline-primary"
-                                    onClick={() => handleToggleTask(task.id)}
-                                >Toggle</button>
-                                <button type="button" class="btn btn-outline-danger"
-                                    onClick={() => handleDeleteTask(task.id)}
-                                >Delete</button>
-                            </div>
-                        </li>
+                        <TaskItem task={task} handleToggleTask={handleToggleTask} handleDeleteTask={handleDeleteTask}/>
                     ))}
                 </ul>
             </div>
