@@ -3,6 +3,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './Todo.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
+import TaskInput from './TaskInput';
 
 function Todo() {
     const [tasks, setTasks] = useState([]);
@@ -51,21 +52,7 @@ function Todo() {
     return (
         <div className="container">
             <h1>Todo Application</h1>
-            <div class="form-group">
-                <input
-                    type="text"
-                    class="form-control"
-                    id="usr"
-                    value={taskname}
-                    onChange={(e) => setTaskname(e.target.value)}
-                    placeholder='Enter the task'
-                />
-                <button
-                    type="button"
-                    class="btn btn-primary"
-                    onClick={handleAddTask}
-                >Add Task</button>
-            </div>
+            <TaskInput handleAddTask={handleAddTask} setTaskname={setTaskname} taskname={taskname}/>
             <div>
                 <ul className='list-group'>
                     {tasks.map((task) => (
